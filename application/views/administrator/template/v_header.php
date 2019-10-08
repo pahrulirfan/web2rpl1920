@@ -25,13 +25,7 @@
                        href="<?=site_url('administrator/pegawai/index')?>">Pegawai</a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="#" class="nav-link" >Logout</a>
-                </li>
-            </ul>
         </div>
     </nav>
     <br>
-
 

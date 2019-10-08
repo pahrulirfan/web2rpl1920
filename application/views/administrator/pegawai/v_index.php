@@ -1,18 +1,21 @@
+<h3><?php echo $sub_judul; ?></h3>
+<hr>
+
 <table class="table table-bordered">
     <thead>
     <tr>
-        <th>NO</th>
+        <th>No</th>
         <th>NIP</th>
-        <th>NAMA</th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>Nama</th>
+        <th>Alamat</th>
+        <th>Jabatan</th>
+        <th>#</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td>1</td>
-        <td>2</td>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
