@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>NO</th>
+        <th>NIP</th>
+        <th>NAMA</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
