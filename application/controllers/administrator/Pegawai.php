@@ -10,7 +10,7 @@ class Pegawai extends CI_Controller
 
     public function index()
     {
-        $data = $this->m_pegawai->getAll();
+        $data = $this->m_pegawai->semua();
 
         var_dump($data);
 
