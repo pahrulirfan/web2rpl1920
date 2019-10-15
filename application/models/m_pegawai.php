@@ -13,4 +13,9 @@ class M_pegawai extends CI_Model
 //        cara 2 dengan langsung menulis nama tabel
         return $this->db->get('tbl_031')->result();
     }
+
+    public function hapus($id)
+    {
+        $this->db->delete('tbl_031', array('id' => $id));
+    }
 }

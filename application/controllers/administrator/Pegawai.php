@@ -21,4 +21,10 @@ class Pegawai extends CI_Controller
         $this->load->view('administrator/pegawai/v_index', $data);
         $this->load->view('administrator/template/footer');
     }
+
+    public function delete($id)
+    {
+        $this->m_pegawai->hapus($id);
+        redirect('administrator/pegawai/index');
+    }
 }
