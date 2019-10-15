@@ -1,6 +1,11 @@
 <h3><?php echo $sub_judul; ?></h3>
 <hr>
 
+<a href="<?=site_url('administrator/pegawai/add'); ?>"
+   class="btn btn-success">Tambah Data</a>
+
+<br> <br>
+
 <table class="table table-bordered">
     <thead>
     <tr>
@@ -13,13 +18,23 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+    <?php
+    $no = 1;
+    foreach ($data_pegawai as $isi) :
+        ?>
+        <tr>
+            <td><?= $no++ ?></td>
+            <td><?= $isi->nip; ?></td>
+            <td><?= $isi->nama; ?></td>
+            <td><?= $isi->alamat; ?></td>
+            <td><?= $isi->jabatan; ?></td>
+            <td>
+                <a href="<?= site_url('administrator/pegawai/edit/' . $isi->id); ?>">Edit</a>
+                <a href="<?= site_url('administrator/pegawai/delete/' . $isi->id); ?>">Delete</a>
+            </td>
+        </tr>
+    <?php
+    endforeach;
+    ?>
     </tbody>
 </table>

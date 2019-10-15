@@ -5,7 +5,7 @@ class M_pegawai extends CI_Model
 //    cara 1 dengan membuat property
 //    protected $table = 'tbl_031';
 
-    public function semua()
+    public function getAll()
     {
 //        cara 1 mengambil property tabel
 //        return $this->db->get($this->table)->result();
