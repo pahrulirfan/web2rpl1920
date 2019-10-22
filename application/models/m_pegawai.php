@@ -2,20 +2,19 @@
 
 class M_pegawai extends CI_Model
 {
-//    cara 1 dengan membuat property
-//    protected $table = 'tbl_031';
+	public function getAll()
+	{
+		return $this->db->get('tbl_005')->result();
+		
+	}
 
-    public function getAll()
-    {
-//        cara 1 mengambil property tabel
-//        return $this->db->get($this->table)->result();
+	public function hapus($id)
+	{
+		$this->db->delete('tbl_005', array('id'=>$id));
+	}
 
-//        cara 2 dengan langsung menulis nama tabel
-        return $this->db->get('tbl_031')->result();
-    }
-
-    public function hapus($id)
-    {
-        $this->db->delete('tbl_031', array('id' => $id));
-    }
+	public function tambah($objek)
+	{
+		$this->db->insert('tbl_005', $objek);
+	}
 }
