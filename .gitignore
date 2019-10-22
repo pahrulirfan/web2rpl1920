@@ -7,7 +7,7 @@ application/logs/*
 !application/logs/index.html
 
 !application/*/.htaccess
-application/config/databse.php
+application/config/database.php
 
 composer.lock
 
