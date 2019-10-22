@@ -53,7 +53,7 @@ class Pegawai extends CI_Controller
         redirect('administrator/pegawai/index');
     }
 
-    public function edit($id)
+    function edit($id)
     {
         $data['sub_judul'] = 'Edit Data Pegawai';
 
@@ -62,5 +62,21 @@ class Pegawai extends CI_Controller
         $this->load->view('administrator/template/v_header');
         $this->load->view('administrator/pegawai/v_edit', $data);
         $this->load->view('administrator/template/footer');
+    }
+
+    function proses_edit()
+    {
+        $id = $this->input->post('id');
+
+        $objek = array(
+            'nip' => $this->input->post('nip'),
+            'nama' => $this->input->post('nama'),
+            'alamat' => $this->input->post('alamat'),
+            'jabatan' => $this->input->post('jabatan')
+        );
+
+        $this->m_pegawai->simpan_edit($id, $objek);
+
+        redirect('administrator/pegawai/index');
     }
 }

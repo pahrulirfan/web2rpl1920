@@ -22,4 +22,9 @@ class M_pegawai extends CI_Model
     {
         return $this->db->where('id', $id)->get('tbl_031')->row();
     }
+
+    public function simpan_edit($id, $object)
+    {
+        $this->db->where('id', $id)->update('tbl_031', $object);
+    }
 }
