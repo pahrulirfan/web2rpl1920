@@ -12,7 +12,7 @@ class M_pengguna extends CI_Model
 
     public function hapus($id)
     {
-        $this->db->delete($this->table, array('id' => $id));
+        $this->db->delete($this->table, array('kode' => $id));
     }
 
     public function tambah($objek)
@@ -22,11 +22,11 @@ class M_pengguna extends CI_Model
 
     public function getWhere($id)
     {
-        return $this->db->where('id', $id)->get($this->table)->row();
+        return $this->db->where('kode', $id)->get($this->table)->row();
     }
 
     public function simpan_edit($id, $object)
     {
-        $this->db->where('id', $id)->update($this->table, $object);
+        $this->db->where('kode', $id)->update($this->table, $object);
     }
 }

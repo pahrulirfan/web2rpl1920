@@ -21,7 +21,7 @@ class Pengguna extends CI_Controller
         $data['data_pengguna'] = $this->m_pengguna->getAll();
 
         $this->load->view('administrator/template/v_header');
-        $this->load->view('administrator/pengguna/v_index', $data);
+        $this->load->view('administrator/pengguna/v_tampil', $data);
         $this->load->view('administrator/template/footer');
 
     }
@@ -36,17 +36,15 @@ class Pengguna extends CI_Controller
     {
         $data['sub_judul'] = 'Tambah Data pengguna';
         $this->load->view('administrator/template/v_header');
-        $this->load->view('administrator/pengguna/v_add', $data);
+        $this->load->view('administrator/pengguna/v_tambah', $data);
         $this->load->view('administrator/template/footer');
     }
 
     public function simpan()
     {
         $objek = array(
-            'nip' => $this->input->post('nip'),
-            'nama' => $this->input->post('nama'),
-            'alamat' => $this->input->post('alamat'),
-            'jabatan' => $this->input->post('jabatan')
+            'email' => $this->input->post('email'),
+            'password' => $this->input->post('password')
         );
 
         $this->m_pengguna->tambah($objek);
@@ -60,19 +58,17 @@ class Pengguna extends CI_Controller
         $data['isi_form'] = $this->m_pengguna->getWhere($id);
 
         $this->load->view('administrator/template/v_header');
-        $this->load->view('administrator/pengguna/v_edit', $data);
+        $this->load->view('administrator/pengguna/v_ubah', $data);
         $this->load->view('administrator/template/footer');
     }
 
     function proses_edit()
     {
-        $id = $this->input->post('id');
+        $id = $this->input->post('kode');
 
         $objek = array(
-            'nip' => $this->input->post('nip'),
-            'nama' => $this->input->post('nama'),
-            'alamat' => $this->input->post('alamat'),
-            'jabatan' => $this->input->post('jabatan')
+            'email' => $this->input->post('email'),
+            'password' => $this->input->post('password')
         );
 
         $this->m_pengguna->simpan_edit($id, $objek);
