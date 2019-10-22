@@ -55,10 +55,10 @@ class Pegawai extends CI_Controller
 
     public function edit($id)
     {
-
-        
         $data['sub_judul'] = 'Edit Data Pegawai';
-        $data['isi_form'] = $data_table;
+
+        $data['isi_form'] = $this->m_pegawai->getWhere($id);
+
         $this->load->view('administrator/template/v_header');
         $this->load->view('administrator/pegawai/v_edit', $data);
         $this->load->view('administrator/template/footer');

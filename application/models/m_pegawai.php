@@ -20,6 +20,6 @@ class M_pegawai extends CI_Model
 
     public function getWhere($id)
     {
-        return $this->db->get('tbl_031')->where('id', $id)->row();
+        return $this->db->where('id', $id)->get('tbl_031')->row();
     }
 }
