@@ -3,7 +3,7 @@
 
 <?php
 if ($this->session->flashdata('msg')) {
-    echo "<div class='alert-info alert'>" . $this->session->flashdata('msg') . "</div>";
+    echo "<div class='alert-info alert' role='alert'>" . $this->session->flashdata('msg') . "</div>";
 }
 ?>
 
