@@ -4,6 +4,8 @@
         display: block;
     }
 </style>
+<?php echo validation_errors(); ?>
+
 <form action="<?= site_url('administrator/pegawai/proses_edit'); ?>" method="post">
     <div class="form-group">
         <label for="nip">NIP</label>

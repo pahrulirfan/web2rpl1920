@@ -42,7 +42,10 @@ class Pegawai extends CI_Controller
 
     public function simpan()
     {
-        $this->form_validation->set_rules('nip', 'NIP', 'required|numeric|exact_length[8]');
+        $this->form_validation->set_rules('nip', 'NIP', 'required|numeric|exact_length[8]|is_unique[tbl_031.nip]');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|min_length[3]');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|min_length[10]');
+        $this->form_validation->set_rules('jabatan', 'Jabatan', 'required|min_length[5]');
 
         if ($this->form_validation->run() == false) {
             $this->add();
@@ -75,15 +78,24 @@ class Pegawai extends CI_Controller
     {
         $id = $this->input->post('id');
 
-        $objek = array(
-            'nip' => $this->input->post('nip'),
-            'nama' => $this->input->post('nama'),
-            'alamat' => $this->input->post('alamat'),
-            'jabatan' => $this->input->post('jabatan')
-        );
+        $this->form_validation->set_rules('nip', 'NIP', 'required|numeric|exact_length[8]');
+        $this->form_validation->set_rules('nama', 'Nama', 'required|min_length[3]');
+        $this->form_validation->set_rules('alamat', 'Alamat', 'required|min_length[10]');
+        $this->form_validation->set_rules('jabatan', 'Jabatan', 'required|min_length[5]');
 
-        $this->m_pegawai->simpan_edit($id, $objek);
+        if ($this->form_validation->run() == false) {
+            $this->edit($id);
+        } else {
 
-        redirect('administrator/pegawai/index');
+            $objek = array(
+                'nip' => $this->input->post('nip'),
+                'nama' => $this->input->post('nama'),
+                'alamat' => $this->input->post('alamat'),
+                'jabatan' => $this->input->post('jabatan')
+            );
+
+            $this->m_pegawai->simpan_edit($id, $objek);
+            redirect('administrator/pegawai/index');
+        }
     }
 }
