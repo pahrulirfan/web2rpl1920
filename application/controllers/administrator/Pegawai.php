@@ -11,12 +11,8 @@ class Pegawai extends CI_Controller
 
     public function Index()
     {
-
-
         //	$data=$this->m_pegawai->getAll();
-
         //var_dump($data);
-
         $data['sub_judul'] = 'Data Pegawai';
         $data['data_pegawai'] = $this->m_pegawai->getAll();
 
@@ -29,6 +25,7 @@ class Pegawai extends CI_Controller
     public function delete($id)
     {
         $this->m_pegawai->hapus($id);
+        $this->session->set_flashdata('msg', 'Data Berhasil Dihapus.');
         redirect('administrator/pegawai/index');
     }
 
