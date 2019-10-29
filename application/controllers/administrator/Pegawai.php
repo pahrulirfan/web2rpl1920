@@ -86,14 +86,12 @@ class Pegawai extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->edit($id);
         } else {
-
             $objek = array(
                 'nip' => $this->input->post('nip'),
                 'nama' => $this->input->post('nama'),
                 'alamat' => $this->input->post('alamat'),
                 'jabatan' => $this->input->post('jabatan')
             );
-
             $this->m_pegawai->simpan_edit($id, $objek);
             redirect('administrator/pegawai/index');
         }
