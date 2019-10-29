@@ -42,15 +42,22 @@ class Pegawai extends CI_Controller
 
     public function simpan()
     {
-        $objek = array(
-            'nip' => $this->input->post('nip'),
-            'nama' => $this->input->post('nama'),
-            'alamat' => $this->input->post('alamat'),
-            'jabatan' => $this->input->post('jabatan')
-        );
+        $this->form_validation->set_rules('nip', 'NIP', 'required|numeric|exact_length[8]');
 
-        $this->m_pegawai->tambah($objek);
-        redirect('administrator/pegawai/index');
+        if ($this->form_validation->run() == false) {
+            $this->add();
+        } else {
+
+            $objek = array(
+                'nip' => $this->input->post('nip'),
+                'nama' => $this->input->post('nama'),
+                'alamat' => $this->input->post('alamat'),
+                'jabatan' => $this->input->post('jabatan')
+            );
+
+            $this->m_pegawai->tambah($objek);
+            redirect('administrator/pegawai/index');
+        }
     }
 
     function edit($id)
