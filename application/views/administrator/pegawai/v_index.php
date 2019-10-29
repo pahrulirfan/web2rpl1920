@@ -34,11 +34,9 @@ if ($this->session->flashdata('msg')) {
             <td><?= $isi->alamat; ?></td>
             <td><?= $isi->jabatan; ?></td>
             <td>
-                <a href="<?= site_url('administrator/pegawai/edit/' . $isi->id); ?>">Edit</a>
-                |
-                <a href="<?= site_url('administrator/pegawai/delete/' . $isi->id); ?>">Delete</a>
+                <a class="badge badge-info" href="<?= site_url('administrator/pegawai/edit/' . $isi->id); ?>">Edit</a>
+                <a class="badge badge-danger" onclick="return confirm('Anda Yakin ?')" href="<?= site_url('administrator/pegawai/delete/' . $isi->id); ?>">Delete</a>
             </td>
-
         </tr>
     <?php
     endforeach;
