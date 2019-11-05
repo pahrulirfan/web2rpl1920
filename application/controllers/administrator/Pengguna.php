@@ -11,8 +11,6 @@ class Pengguna extends CI_Controller
 
     public function Index()
     {
-
-
         //	$data=$this->m_pengguna->getAll();
 
         //var_dump($data);
