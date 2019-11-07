@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Rpl extends CI_Controller {
 
+	// akses dari webbrowser rpl/mahasiswa
 	public function Mahasiswa()
 	{
 
