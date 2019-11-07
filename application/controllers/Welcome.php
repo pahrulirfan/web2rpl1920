@@ -18,6 +18,8 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	 // dijadikan sebagai halaman utama ketika baru mengakses route
 	public function index()
 	{
 		$this->load->view('welcome_message');
